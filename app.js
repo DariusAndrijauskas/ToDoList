@@ -1,5 +1,5 @@
 //jshint esversion:6
-
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -13,8 +13,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express.static("public"));
-
-mongoose.connect("mongodb+srv://admin-me:Test123@cluster0.bfhuq.mongodb.net/todoListDB");
+mongoose.connect("mongodb+srv://admin-darius:" + process.env.MONGODBPASSWORD + "@herokudb.uqkbx.mongodb.net/todoListDB");
 
 const itemsSchema = {
   name: String
@@ -45,7 +44,7 @@ app.get("/", function(req, res) {
         if (err) {
           console.log(err);
         } else {
-          console.log("Line 37: successfully added default items.");
+          console.log("successfully added default items");
         }
       });
       res.redirect("/");
@@ -117,7 +116,7 @@ app.get("/:customListName", function(req, res) {
           name: customListName,
           items: defaultItems
         });
-        console.log("naujas psl sukurtas");
+        console.log("new page successfully generated");
         list.save();
         res.redirect("/" + customListName);
       } else {
@@ -132,7 +131,7 @@ app.get("/:customListName", function(req, res) {
 
 let port = process.env.PORT;
 if (port == null || port == "") {
-  port = 8000;
+  port = 3000;
 }
 app.listen(port, function() {
   console.log("Server started on port 3000");
