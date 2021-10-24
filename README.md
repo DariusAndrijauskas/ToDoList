@@ -3,17 +3,19 @@ Root "/" page gives you "Today" list, but you can create as many as you want of 
 Try "/work", or "/shopping".
 
 Tech used to make the list possible:
-HTML
-CSS
-JavaSript
-Node.js with Nodemon
-Express.js
-EJS
-MongoDB
-Mongoose
-Git
-GitHub
-Heroku
-Atlas
-.env
-Lodash
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaSript</li>
+  <li>Node.js with Nodemon</li>
+  <li>Express.js</li>
+  <li>EJS</li>
+  <li>MongoDB</li>
+  <li>Mongoose</li>
+  <li>Git</li>
+  <li>GitHub</li>
+  <li>Heroku</li>
+  <li>Atlas</li>
+  <li>.env</li>
+  <li>Lodash</li>
+</ul>
